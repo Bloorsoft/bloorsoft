@@ -1,0 +1,139 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { StickyHeader, Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import logoSmall from "../../assets/logoSmall.png";
+import { Picture } from "astro:assets";
+
+// TODO: match these with our current links so they wouldn't have to get reindexed on google
+const menuitems = [
+  // {
+  //   title: "Pages",
+  //   path: "#",
+  //   children: [
+  //     { title: "Features", path: "/features" },
+  //     { title: "Integrations", path: "/integrations" },
+  //     {
+  //       title: "Blog Details",
+  //       path: "/blog//typography-example",
+  //     },
+  //     { title: "404 Page", path: "/404" },
+  //   ],
+  // },
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Work",
+    path: "/work",
+  },
+  {
+    title: "Services",
+    path: "/services",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+];
+---
+
+<StickyHeader
+  class="sticky top-0 border-b z-20 transition-all"
+  scrollY={50}
+  defaultClass="py-5 border-transparent"
+  activeClass="py-2 bg-white/80 border-gray-200 backdrop-blur-lg">
+  <Container>
+    <div
+      class="flex flex-col lg:flex-row justify-between items-center relative z-10"
+      transition:animate="none">
+      <Astronav>
+        <div class="flex w-full lg:w-auto items-center justify-between">
+          <a
+            href="/"
+            class="text-lg flex items-center transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full px-2 -ml-2">
+            <!-- <span class="font-bold text-indigo-600">Bloorsoft</span> -->
+            <!-- <span class="font-bold text-slate-600 mr-1">Bloorsoft</span> -->
+            <span class="font-bold text-slate-900 mr-1">Bloorsoft</span>
+            <span
+              class="uppercase mt-0.5 leading-none text-[10px] ml-1 font-bold bg-gray-200 text-slate-700 px-2 py-1 rounded-md">
+              <Picture
+                src={logoSmall}
+                alt="Bloorsoft Logo"
+                formats={["webp"]}
+                loading="eager"
+                fetchpriority="auto"
+                class="w-5 h-5"
+              />
+            </span>
+          </a>
+          <div class="block lg:hidden">
+            <MenuIcon class="w-4 h-4 text-gray-800" />
+          </div>
+        </div>
+        <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+          <ul class="flex flex-col lg:flex-row lg:gap-3">
+            {
+              menuitems.map((item, index) => (
+                <>
+                  {item.children && (
+                    <Dropdown
+                      title={item.title}
+                      children={item.children}
+                      lastItem={index === menuitems.length - 1}
+                    />
+                  )}
+
+                  {!item.children && (
+                    <li>
+                      <a
+                        href={item.path}
+                        class="flex lg:px-3 py-2 text-sm text-gray-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 transition focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+                        {item.title}
+                      </a>
+                    </li>
+                  )}
+                </>
+              ))
+            }
+          </ul>
+          <div class="lg:hidden flex items-center mt-3 gap-4">
+            <!-- <Link href="#" style="muted" block size="md">Log in</Link> -->
+            <Link href="#" size="md" block>Try for Free</Link>
+          </div>
+        </MenuItems>
+      </Astronav>
+      <div>
+        <div class="hidden lg:flex items-center gap-4">
+          <!-- <a
+            href="#"
+            class="text-sm px-2 py-1 transition focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full"
+            >Log in</a
+          > -->
+          <Link
+            href="#"
+            size="sm"
+            class="inline-flex items-center group gap-px">
+            <span>Get in touch!</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
+              <path
+                fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </Container>
+</StickyHeader>

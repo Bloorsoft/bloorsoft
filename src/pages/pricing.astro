@@ -1,0 +1,85 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Pricing from "@components/pricing.astro";
+import Faq from "@components/faq.astro";
+import ComparePricing from "@components/compare-pricing.astro";
+
+const pricing = [
+  {
+    name: "Starter",
+    price: "49",
+    desc: "Perfect for startups",
+    color: "indigo",
+    popular: false,
+    features: [
+      "Lifetime free",
+      "Up to 3 users",
+      "Unlimited Pages",
+      "Astro Sub domain",
+      "Basic Integrations",
+      "Community Support",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/",
+    },
+  },
+  {
+    name: "Business",
+    price: "149",
+    desc: "For serious businesses",
+    popular: true,
+    color: "orange",
+    features: [
+      "All Free Features",
+      "Up to 20 users",
+      "20 Custom domains",
+      "Unlimited Collaborators",
+      "Advanced Integrations",
+      "Priority Support",
+    ],
+    button: {
+      text: "Get Started",
+      link: "#",
+    },
+  },
+  {
+    name: "Enterprise",
+    price: null,
+    desc: "Suitable for Enterprise solutions",
+    popular: false,
+    color: "purple",
+    features: [
+      "All Pro Features",
+      "Unlimited Custom domains",
+      "99.99% Uptime SLA",
+      "SAML & SSO Integration",
+      "Dedicated Account Manager",
+      "24/7 Phone Support",
+    ],
+    button: {
+      text: "Contact us",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc">
+        Simple & Predictable pricing. No Surprises.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+    <ComparePricing />
+    <Faq />
+  </Container>
+</Layout>

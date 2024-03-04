@@ -1,0 +1,155 @@
+---
+import Badge from "@components/ui/badge.astro";
+import { Picture } from "astro:assets";
+import FeatureImg1 from "../assets/features/6.png";
+import FeatureImg2 from "../assets/features/2.png";
+import { Icon } from "astro-icon/components";
+import Link from "@components/ui/link.astro";
+
+const { nomargin } = Astro.props;
+---
+
+<div
+  class:list={[
+    "max-w-4xl mx-auto flex flex-col items-center justify-center",
+    !nomargin && "mt-24",
+  ]}>
+  <Badge color="purple">TWO-COL FEATURES</Badge>
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
+    Supercharge Your Workflows
+  </h2>
+  <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    Unlock your team's true potential with our state-of-the-art SaaS platform.
+    From intelligent task management to real-time collaboration and top-notch
+    data security, we have everything you need to streamline your workflows and
+    achieve high productivity.
+  </p>
+</div>
+
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center">
+    <Picture
+      src={FeatureImg1}
+      alt="Feature Image"
+      formats={["avif", "webp"]}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="purple" class="-ml-px">Simplified Workflows</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Experience the Ultimate Boost in Productivity with Our Intuitive
+        Platform
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        Streamline your tasks and collaborate seamlessly with our cutting-edge
+        SaaS startup platform. Unlock the potential of your team and take
+        productivity to new heights.
+      </p>
+
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Intelligent Task Management</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Real-time Collaboration</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Data Security & Privacy</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <Link href="#" size="sm" class="inline-flex items-center group gap-px">
+          <span>Start 14-day trial</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </Link>
+        <a
+          href="#"
+          class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+          Contact Sales</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-2 py-10">
+  <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+    <Picture
+      src={FeatureImg2}
+      alt="Feature Image"
+      formats={["avif", "webp"]}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="grid place-items-center">
+    <div class="max-w-lg">
+      <Badge color="purple" class="-ml-px">AI-Powered Insights</Badge>
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        Supercharge Your Marketing Strategy with Advanced Analytics
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">
+        Harness the potential of AI-driven marketing analytics to optimize your
+        campaigns, understand your audience better, and achieve unprecedented
+        growth.
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Smart Audience Segmentation</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Predictive Campaign Performance</span>
+        </li>
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-sm">Real-time Data Visualization</span>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4 mt-6">
+        <Link href="#" size="sm" class="inline-flex items-center group gap-px">
+          <span>Start 14-day trial</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </Link>
+        <a
+          href="#"
+          class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full"
+          >Contact Sales</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

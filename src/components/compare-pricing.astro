@@ -1,0 +1,222 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  "Custom Domains",
+  "Storage",
+  "Users",
+  "Email Support",
+  "API Access",
+  "SSO Integration",
+  "Data Export",
+  "File Uploads",
+  "Analytics",
+  "Custom Branding",
+  "24/7 Support",
+  "Priority Access",
+  "Custom Reporting",
+  "Team Collaboration",
+  "Integration with CRM",
+  "White Label",
+  "Data Security",
+  "Mobile App Access",
+  "User Permissions",
+  "Backup and Restore",
+  // Add more features as needed
+];
+
+const plans = [
+  {
+    name: "Free",
+    price: "$0",
+    color: "gray",
+    values: [
+      "Single Subdomain",
+      "1GB",
+      "10",
+      "Email Only",
+      "-",
+      "-",
+      "Limited",
+      "Basic",
+      "Limited",
+      "-",
+      "-",
+      "-",
+      "Basic",
+      "-",
+      "-",
+      "-",
+      "Basic",
+      "-",
+      "Limited",
+      "-",
+    ],
+  },
+  {
+    name: "Starter",
+    price: "$49/mo",
+    color: "indigo",
+    values: [
+      "1 Custom Domain",
+      "10GB",
+      "100",
+      "Email and Chat",
+      "-",
+      "-",
+      "Unlimited",
+      "Basic",
+      "Limited",
+      "-",
+      "-",
+      "-",
+      "Basic",
+      "Limited",
+      "-",
+      "-",
+      "Basic",
+      "-",
+      "Limited",
+      "-",
+    ],
+  },
+  {
+    name: "Business",
+    price: "$149/mo",
+    popular: true,
+    color: "orange",
+    values: [
+      "5 Custom Domains",
+      "50GB",
+      "500",
+      "Email, Chat, and Phone",
+      true,
+      "-",
+      "Unlimited",
+      "Advanced",
+      "Limited",
+      true,
+      true,
+      "-",
+      "Advanced",
+      true,
+      "-",
+      "-",
+      "Advanced",
+      true,
+      "Unlimited",
+      true,
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    color: "purple",
+    values: [
+      "100 Custom Domains",
+      "200GB",
+      "Unlimited",
+      "24/7 Support",
+      true,
+      true,
+      "Unlimited",
+      "Advanced",
+      "Unlimited",
+      true,
+      true,
+      true,
+      "Advanced",
+      true,
+      true,
+      true,
+      "Advanced",
+      true,
+      "Unlimited",
+      true,
+    ],
+  },
+];
+
+const colors = {
+  indigo: "text-indigo-600",
+  orange: "text-orange-700",
+  purple: "text-purple-600",
+};
+---
+
+<Container>
+  <div class="mt-16">
+    <h3 class="text-xl lg:text-3xl font-bold lg:tracking-tight">
+      Compare Plans
+    </h3>
+    <p class="mt-1 text-slate-600">
+      Use the table below to compare full features of this product.
+    </p>
+  </div>
+
+  {/* Desktop Version */}
+  <div
+    class="mt-8 overflow-x-auto lg:overflow-visible w-full border border-slate-200 rounded-md">
+    <div class="min-w-max">
+      <div
+        class="sticky top-0 py-6 bg-white border-b border-slate-200 rounded-t-md">
+        <div class="grid grid-cols-5 gap-0 items-center bg-white">
+          <div class="text-slate-500 px-5">Compare Plans</div>
+          {
+            plans.map((plan) => (
+              <div class="px-5">
+                <h3 class:list={[colors[plan.color] || "text-neutral-800"]}>
+                  {plan.name}
+                </h3>
+                <div class="text-xl mt-1 lg:text-2xl font-bold text-black">
+                  {plan.price}
+                </div>
+
+                <div class="flex mt-3">
+                  <Link
+                    href="#"
+                    block
+                    size="sm"
+                    style={plan.popular ? "primary" : "outline"}>
+                    Get Started
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="grid grid-cols-5 gap-0 items-center">
+        <div class="grid">
+          {
+            features.map((feature) => (
+              <div class="border-b border-slate-200 font-medium text-sm py-3 px-5 odd:bg-slate-50">
+                {feature}
+              </div>
+            ))
+          }
+        </div>
+
+        {
+          plans.map((plan) => (
+            <div class="grid gap-0">
+              {plan.values.map((value) => (
+                <div class="border-b border-slate-200 odd:bg-slate-50 text-sm py-3 px-5">
+                  {typeof value === "boolean" ? (
+                    <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+                  ) : (
+                    value
+                  )}
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Container>
