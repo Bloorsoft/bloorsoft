@@ -11,5 +11,11 @@
       "@assets/*": ["assets/*"],
       "@pages/*": ["pages/*"]
     }
-  }
+  },
+  "plugins": [
+    {
+      "name": "@astrojs/ts-plugin"
+    },
+  ],
+  "include": ["src/**/*", "src/declarations.d.ts"],
 }

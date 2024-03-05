@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import Container from "@components/container.astro";
+import { Picture } from "astro:assets";
+
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.data.publishDate).getTime() -
+    new Date(a.data.publishDate).getTime(),
+);
+const latestThreePosts = sortedPosts.slice(0, 3);
+---
+
+<div class="overflow-x-clip">
+  <Container>
+    <h2 class="text-5xl font-bold mb-8 text-center mt-20">Latest Posts</h2>
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+      {
+        latestThreePosts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="block">
+            <Picture
+              formats={["avif", "webp"]}
+              src={post.data.image.src}
+              alt={post.data.image.alt}
+              width="600"
+              height="335"
+              class="w-full h-48 object-cover rounded-md"
+            />
+            <div class="mt-2">
+              <h3 class="text-lg font-semibold">{post.data.title}</h3>
+              <p class="text-sm text-gray-500">{post.data.snippet}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</div>

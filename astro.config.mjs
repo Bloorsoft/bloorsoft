@@ -6,9 +6,10 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship-pro.web3templates.com",
+  site: "https://bloorsoft.com",
   image: {
     domains: ["source.unsplash.com", "images.unsplash.com"],
   },
   integrations: [tailwind(), mdx(), icon(), sitemap()],
 });
+tr

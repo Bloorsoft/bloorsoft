@@ -1,6 +1,8 @@
 ---
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon/components";
+import logoSmall from "@assets/logoSmall.png";
+import { Picture } from "astro:assets";
 
 const { margin } = Astro.props;
 
@@ -21,6 +23,10 @@ const footermenu = {
     {
       title: "Contact",
       path: "/contact",
+    },
+    {
+      title: "Careers",
+      path: "/careers",
     },
   ],
   product: [
@@ -70,14 +76,20 @@ const footermenu = {
   <Container>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
       <div class="sm:col-span-2 md:col-span-3 lg:col-span-2">
-        <a href="/" class="text-lg flex items-center"
-          ><span class="font-bold text-indigo-600">Bloor</span><span
-            class="text-slate-600">soft</span
-          >
-          <span
-            class="uppercase mt-0.5 leading-none text-[10px] ml-1 font-bold bg-gray-200 text-slate-700 px-2 py-1 rounded-md"
-            >PRO</span
-          >
+        <a href="/" class="text-lg flex items-center">
+          <!-- <span class="font-bold text-indigo-600">Bloor</span> -->
+          <span class="flex gap-2 items-center">
+            <Picture
+              src={logoSmall}
+              alt="Bloorsoft Logo"
+              formats={["webp"]}
+              loading="eager"
+              fetchpriority="auto"
+              class="w-5 h-5"
+            />
+
+            <span class="text-slate-800">Bloorsoft</span>
+          </span>
         </a>
         <p class="mt-4 text-sm text-slate-700 max-w-xs">
           Astroship Pro is a premium astro website template made for saas &
@@ -85,7 +97,7 @@ const footermenu = {
         </p>
         <div class="flex gap-3 mt-4 items-center">
           <a
-            href="https://twitter.com/surjithctly"
+            href="https://twitter.com/bloorsoft"
             target="_blank"
             rel="noopener noreferrer"
             class="bg-slate-200 hover:bg-slate-300 rounded w-6 h-6 inline-flex items-center justify-center text-slate-500">
@@ -93,7 +105,7 @@ const footermenu = {
             <span class="sr-only">Twitter or X</span></a
           >
           <a
-            href="https://facebook.com/"
+            href="https://facebook.com/bloorsoft"
             target="_blank"
             rel="noopener noreferrer"
             class="bg-slate-200 hover:bg-slate-300 rounded w-6 h-6 inline-flex items-center justify-center text-slate-500">
@@ -102,7 +114,7 @@ const footermenu = {
             ></a
           >
           <a
-            href="https://linkedin.com/"
+            href="https://ca.linkedin.com/company/bloorsoft"
             target="_blank"
             rel="noopener noreferrer"
             class="bg-slate-200 hover:bg-slate-300 rounded w-6 h-6 inline-flex items-center justify-center text-slate-500">
