@@ -1,0 +1,28 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Careers">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="badge">Join Us</Fragment>
+      <Fragment slot="title">
+        Careers at <span class="text-indigo-600">Bloorsoft</span>
+      </Fragment>
+      <Fragment slot="desc">
+        We're a multi-cultural team from around the world! We come from diverse
+        backgrounds, bringing different personalities, experiences and skills to
+        the job. This is what makes our team so special..
+      </Fragment>
+    </Sectionhead>
+    <div class="container mx-auto px-4 mt-16">
+      <p>
+        Astro is a new kind of framework for the modern web. It's a JavaScript
+        build system and React framework that lets you build fast, ship less
+        JavaScript, and run your entire site from a single file.
+      </p>
+    </div>
+  </Container>
+</Layout>

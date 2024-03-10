@@ -7,111 +7,142 @@ import IntegrationImg from "../assets/integrations.svg?url";
 import FeatureImgOne from "../assets/features/2.png";
 import FeatureImgTwo from "../assets/features/2.png";
 import FeatureImgThree from "../assets/features/3.png";
+import ArteficeImg from "../assets/works/artefice-3.png";
+import TeleVUImg from "../assets/works/televu-2.png";
+import QuantumImg from "../assets/works/quantum-1.png";
+import BloorPlumbingImg from "../assets/works/bloorplumbing-2.png";
+import RahhImg from "../assets/works/rahh-2.png";
 ---
 
 <div class="mt-24">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Applictaions that we've built for <span class="text-indigo-600">startups</span>
+    What we've built for <span class="text-indigo-600">startups</span>
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    Behind every project is a startup's ambition turned into action. See the
+    real-world impact of our tailored tech solutions.
   </p>
 </div>
 
 <div class="grid md:grid-cols-2 lg:grid-cols-5 mt-16 gap-10">
-  <Card class="lg:col-span-3" color="purple">
+  <Card class="lg:col-span-3" color="purple" caseStudyLink="/work/artefice">
     <Fragment slot="image">
       <Picture
-        src={FeatureImgOne}
+        src={ArteficeImg}
         alt="Feature image"
         formats={["avif", "webp"]}
-        class="h-full w-full object-contain"
+        class="h-full w-full object-fit"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Astroship</span>
-    <span slot="title">Responsive Template</span>
+    <span slot="badge">Artefice</span>
+    <span slot="title">AI + E-Commerce</span>
     <span slot="desc">
-      Astroship is a creative and modern mobile responsive website template that
-      helps you create any kind of marketing websites or landing pages.
+      We leveraged Open AI's GPT-4 and Dall-E to create a unique fashiong
+      experience for creatives who want to design their own apparel.
     </span>
+    <a
+      slot="link"
+      href="https://artefice.ai/"
+      class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+      Checkout Artefice
+    </a>
   </Card>
-  <Card class="lg:col-span-2" color="indigo">
+  <Card class="lg:col-span-2" color="indigo" caseStudyLink="/work/televu">
     <Fragment slot="image">
       <Picture
-        src={FeatureImgTwo}
-        alt="Feature image"
+        src={TeleVUImg}
+        alt="TeleVU Innovation website image"
         formats={["avif", "webp"]}
-        class="h-full w-full object-contain"
+        class="h-full w-full object-contain scale-125"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Creative</span>
-    <span slot="title">Next Level Template</span>
+    <span slot="badge">TeleVU Innovation</span>
+    <span slot="title">Web Development + Health Care</span>
     <span slot="desc">
-      Astroship is a new kind of website template that integrates your favorite
-      tools and workflows.</span
-    >
+      From implementing custom chat microservices to major UI/UX overhauls, we
+      helped TeleVU innovate in the health care sector.
+    </span>
+    <a
+      slot="link"
+      href="https://televu.ca/"
+      class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+      Visit TeleVU
+    </a>
   </Card>
 </div>
 
 <div class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
-  <Card color="indigo" size="sm">
+  <Card color="indigo" size="sm" caseStudyLink="/work/quantum">
     <Fragment slot="image">
       <Picture
-        src={FeatureImgThree}
+        src={QuantumImg}
+        alt="Feature image"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-fit scale-150"
+        loading="lazy"
+      />
+    </Fragment>
+    <span slot="badge">Quantum</span>
+    <span slot="title">Mobile App + Entertainment</span>
+    <span slot="desc">
+      Connecting Toronto's top influencers with premium entertainment brands to
+      supercharge affiliate marketing.</span
+    >
+  </Card>
+
+  <Card color="purple" size="sm" caseStudyLink="/work/rahh">
+    <Fragment slot="image">
+      <Picture
+        src={RahhImg}
         alt="Feature image"
         formats={["avif", "webp"]}
         class="h-full w-full object-contain"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Template</span>
-    <span slot="title">Modern Design</span>
+    <span slot="badge">Rahh</span>
+    <span slot="title">360 VR + Web</span>
     <span slot="desc">
-      Feeling old? Try this template and be a part of the modern design.</span
-    >
+      Rahh wanted a unique way to showcase their homes during Covid-19 and we
+      built a 360 VR experience for them.
+    </span>
+    <a
+      slot="link"
+      href="https://29aglenstewart.ca/"
+      class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+      Experience Rahh
+    </a>
   </Card>
 
-  <Card color="purple" size="sm">
-    <Fragment slot="image">
-      <Picture
-        src={FeatureImgTwo}
-        alt="Feature image"
-        formats={["avif", "webp"]}
-        class="h-full w-full object-contain"
-        loading="lazy"
-      />
-    </Fragment>
-    <span slot="badge">Product</span>
-    <span slot="title">Highlight Features</span>
-    <span slot="desc">
-      You can highlight your features in a trendy grid like this one.</span
-    >
-  </Card>
-
-  <Card size="sm">
+  <Card size="sm" caseStudyLink="/work/bloor-plumbing">
     <Fragment slot="image">
       <!-- // svg image. cannot use <picture/> as of now -->
-      <Image
-        src={IntegrationImg}
+      <Picture
+        src={BloorPlumbingImg}
         alt="Feature image"
-        width="909"
-        height="823"
+        formats={["avif", "webp"]}
         class="h-full w-full object-contain"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Webhooks</span>
-    <span slot="title">100+ Integrations</span>
+    <span slot="badge">Bloor Plumbing</span>
+    <span slot="title">CRM + CMS + SMBs</span>
     <span slot="desc">
-      Astroship can be integrated with hundreds of tools using Zapier.</span
+      We revamped Bloor Plumbing's CMS and built a custom CRM for their specific
+      needs.</span
     >
+    <a
+      slot="link"
+      href="https://bloorplumbing.com/"
+      class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+      Visit Bloor Plumbing
+    </a>
   </Card>
 </div>
 
-<div class="flex items-center gap-4 align-center justify-center mt-8">
+<!-- <div class="flex items-center gap-4 align-center justify-center mt-8">
   <Link href="/work" size="sm" class="inline-flex items-center group gap-px">
     <span>See more</span>
     <svg
@@ -125,10 +156,9 @@ import FeatureImgThree from "../assets/features/3.png";
         clip-rule="evenodd"></path>
     </svg>
   </Link>
-  <!-- <a
+  <a
     href="#"
     class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
     Contact Sales</a
-  > -->
-</div>
-
+  >
+</div> -->

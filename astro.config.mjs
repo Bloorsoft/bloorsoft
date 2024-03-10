@@ -12,4 +12,3 @@ export default defineConfig({
   },
   integrations: [tailwind(), mdx(), icon(), sitemap()],
 });
-tr

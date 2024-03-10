@@ -5,10 +5,10 @@ import Review from "@components/review.astro";
 
 const testimonials = [
   {
-    name: "John Doe",
-    title: "CEO at TechCorp",
+    name: "Farbod Abolhassani",
+    title: "Director, Innovation and Technology at TeleVU Innovation",
     image: "https://source.unsplash.com/fHXpgMd_XhE",
-    text: "Astroship has transformed the way we manage our projects. Its well-designed interface and powerful features make it a must-have tool for any startup. We've seen a great increase in our productivity and collaboration.",
+    text: "Bloorsoft stands out for its personalized approach, effective communication, adaptability, and dedication to delivering exceptional quality. Their ability to truly understand and cater to the client's needs is a unique quality that makes them an outstanding partner in the industry.",
   },
   {
     name: "Jane Smith",
@@ -41,19 +41,27 @@ const testimonials = [
     text: "Astroship has been a lifesaver for our finance department. Its robust accounting features and automated invoicing have saved us countless hours of manual work. It's the perfect financial companion for any business!",
   },
 ];
+
+export interface Props {
+  showHeadings?: boolean;
+}
+
+const { showHeadings } = Astro.props;
+
+const show = showHeadings !== undefined ? showHeadings : true;
 ---
 
-<Container>
+{show && <Container>
   <div class="mt-24">
     <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
-      Client Testimonials
+      What Our Clients Say
       <!-- <span class="text-indigo-600">Testimonials</span> -->
     </h2>
     <p class="text-lg mt-4 text-slate-600 text-center">
-      Bloorsoft is trusted by the world's leading companies and brands.
+      We love working with startups. We help them grow and succeed. Here's what our clients have to say about us.
     </p>
   </div>
-</Container>
+</Container>}
 
 <div class="mt-10 relative overflow-x-clip">
   <div

@@ -15,10 +15,10 @@ const latestThreePosts = sortedPosts.slice(0, 3);
 <div class="overflow-x-clip">
   <Container>
     <h2 class="text-5xl font-bold mb-8 text-center mt-20">Latest Posts</h2>
-    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
       {
         latestThreePosts.map((post) => (
-          <a href={`/blog/${post.slug}`} class="block">
+          <a href={`/blog/${post.slug}`} class="block transform transition duration-500 ease-in-out hover:scale-105">
             <Picture
               formats={["avif", "webp"]}
               src={post.data.image.src}

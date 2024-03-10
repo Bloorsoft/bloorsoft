@@ -1,0 +1,70 @@
+---
+import Badge from "@components/ui/badge.astro";
+const {
+  color = "DEFAULT",
+  size = "md",
+  class: className,
+  caseStudyLink,
+  isOpenSource = false,
+} = Astro.props;
+import Link from "@components/ui/link.astro";
+
+const colors = {
+  DEFAULT: "bg-gray-50",
+  indigo: "bg-indigo-50",
+  purple: "bg-purple-50",
+};
+---
+
+<div
+  class:list={[
+    "flex md:flex-row flex-col-reverse items-center md:items-start gap-4 md:gap-8 rounded-2xl p-8 bg-gray-50 transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg",
+    className,
+  ]}>
+    <div class="w-full md:w-1/2 flex flex-col md:justify-between h-full">
+    <div>
+      {
+        Astro.slots.has("badge") && (
+          <Badge color={color}>
+            <slot name="badge" />
+          </Badge>
+        )
+      }
+      <h3 class="text-xl lg:text-2xl font-medium mt-2 md:mt-0">
+        <slot name="title" />
+      </h3>
+      <p class="text-slate-600 mt-2 [text-wrap:balance]">
+        <slot name="desc" />
+      </p>
+    </div>
+    <div class="flex items-center gap-4 mt-6">
+      <Link
+        href={caseStudyLink}
+        size="sm"
+        class="inline-flex items-center group gap-px">
+        <span>{isOpenSource ? "Our Thoughts" : "Case Study"}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
+          <path
+            fill-rule="evenodd"
+            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </Link>
+      <slot name="link" />
+    </div>
+  </div>
+  <div
+    class:list={[
+      "flex-shrink-0 overflow-hidden flex items-start justify-center h-auto relative w-full md:w-1/2",
+      size === "sm" ? "lg:h-60" : "lg:h-80",
+    ]}>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent z-10">
+    </div>
+    <slot name="image" />
+  </div>
+</div>

@@ -1,0 +1,103 @@
+---
+import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/work-card.astro";
+import { Picture } from "astro:assets";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("work", ({ data }) => {
+    return !data?.draft && data?.publishDate < new Date();
+  });
+
+  const allSortedPosts = allPosts?.sort(function (a, b) {
+    return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+  });
+
+  return [
+    {
+      params: {
+        slug: "work",
+      },
+      props: {
+        page: {
+          data: allSortedPosts,
+        },
+      },
+    },
+  ];
+}
+
+const { page } = Astro.props;
+const { data: allSortedPosts } = page;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/works/*.{jpeg,jpg,png,gif}",
+);
+---
+
+<Layout title="Work">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="badge">Our Work</Fragment>
+      <Fragment slot="title">
+        What We've Built for <span class="text-indigo-600">Startups</span>
+      </Fragment>
+      <Fragment slot="desc">
+        We're a multi-cultural team from around the world! We come from diverse
+        backgrounds, bringing different personalities, experiences and skills to
+        the job. This is what makes our team so special..
+      </Fragment>
+    </Sectionhead>
+    <div class="container mx-auto px-4 mt-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          allSortedPosts.map(
+            ({
+              data: {
+                caseStudyLink,
+                image,
+                title,
+                snippet,
+                websiteLink,
+                badge,
+              },
+            }) => (
+              <Card
+                class="transition-transform duration-500 hover:scale-105 md:col-span-3"
+                color="purple"
+                caseStudyLink={caseStudyLink}>
+                <Fragment slot="image">
+                  <Picture
+                    src={images[image.src]()}
+                    alt={image.alt}
+                    formats={["avif", "webp"]}
+                    class="h-full w-full object-fit scale-150"
+                    loading="lazy"
+                  />
+                </Fragment>
+                <span slot="badge">{badge}</span>
+                <h3 class="text-xl font-semibold mt-4" slot="title">
+                  {title}
+                </h3>
+                <p class="text-gray-600" slot="desc">
+                  {snippet}
+                </p>
+                {websiteLink && (
+                  <a
+                    slot="link"
+                    href={websiteLink}
+                    class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
+                    Live Website
+                  </a>
+                )}
+              </Card>
+            ),
+          )
+        }
+      </div>
+    </div>
+  </Container>
+</Layout>

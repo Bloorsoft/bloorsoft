@@ -19,7 +19,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About" footerMargin={false}>
   <Container>
     <Sectionhead>
-      <Fragment slot="badge">ABOUT US</Fragment>
+      <Fragment slot="badge">About Us</Fragment>
       <Fragment slot="title">We're Building Future</Fragment>
       <Fragment slot="desc">
         We're a multi-cultural team from around the world! We come from diverse
@@ -90,7 +90,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         Core <span class="text-indigo-600 font-bold">Team</span>
       </h2>
       <p class="text-lg mt-4 text-slate-600 text-center">
-        Astroship is built by these awesome individuals.
+        Bloorsoft is managed by these awesome individuals.
       </p>
     </div>
 
@@ -121,5 +121,23 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       }
     </div>
   </Container>
+
+  <div class="mt-24 mb-8">
+    <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+      From <span class="text-indigo-600 font-bold">Toronto</span> to <span
+        class="text-indigo-600 font-bold">SF</span
+      >
+    </h2>
+    <p class="text-lg mt-4 text-slate-600 text-center">
+      We help startups all over North America
+    </p>
+  </div>
+
+  <iframe
+    src="https://storage.googleapis.com/maps-solutions-3bfk0pokjj/locator-plus/mayt/locator-plus.html"
+    height="300px"
+    class="border-0 w-full p-0 md: h-[500px]"
+    loading="lazy">
+  </iframe>
   <Cta />
 </Layout>

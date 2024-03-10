@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import { Picture } from "astro:assets";
+import Badge from "@components/ui/badge.astro";
+
+export async function getStaticPaths() {
+  const workEntries = await getCollection("open-source");
+  return workEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, snippet, image, technologies } = entry.data;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${title} - Case Study`}>
+  <Container>
+    <div class="mx-auto max-w-3xl text-center mt-14">
+      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+        Our Thoughts
+      </span>
+      <h1
+        class="text-3xl lg:text-4xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+        {title}
+      </h1>
+      <h2 class="text-lg text-gray-600">{snippet}</h2>
+      <div class="flex flex-wrap gap-4 items-center justify-center mt-4">
+        {technologies.map((tech) => (
+          <Badge color="purple">{tech}</Badge>
+        ))}
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-4xl">
+      <Picture
+        formats={["avif", "webp"]}
+        src={image?.src}
+        alt={image?.alt}
+        width="1280"
+        height="800"
+        class="h-full w-full object-contain rounded-xl mt-6"
+        transition:name={`post-img-${entry.slug}`}
+      />
+    </div>
+
+    <div
+      class="mx-auto prose mt-6 max-w-3xl prose-headings:mb-2 prose-headings:mt-8">
+      <Content />
+    </div>
+  </Container>
+</Layout>
