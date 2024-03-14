@@ -26,8 +26,6 @@
         "scripts/*"
       ]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
   },
   "plugins": [
     {
