@@ -4,11 +4,13 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://bloorsoft.com",
   image: {
-    domains: ["source.unsplash.com", "images.unsplash.com"],
+    domains: ["source.unsplash.com", "images.unsplash.com"]
   },
-  integrations: [tailwind(), mdx(), icon(), sitemap()],
+  integrations: [tailwind(), mdx(), icon(), sitemap(), react()]
 });

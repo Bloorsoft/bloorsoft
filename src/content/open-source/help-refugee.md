@@ -9,8 +9,8 @@ image:
   }
 publishDate: "2022-11-09 16:39"
 category: "Courses"
-technologies: ["Astro", "TailwindCSS", "Netlify"]
-badge: "Astro + TailwindCSS"
+technologies: ["Astro", "TailwindCSS", "Netlify", "Starlight"]
+badge: "Social Projects"
 websiteLink: "https://helprefugee.ca"
 ossLink: "/open-source/help-refugee"
 ---

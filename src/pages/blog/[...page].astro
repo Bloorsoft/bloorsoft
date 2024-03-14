@@ -31,15 +31,15 @@ const { page } = Astro.props;
     <Sectionhead>
       <Fragment slot="title">Our Blog</Fragment>
       <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
+        We talk about startups, building in public, and open source software.
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
       <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-16">
         {
-          page.data.map((post, index) => (
+          page?.data?.map((post, index) => (
             <li>
-              <a href={`/blog/${post.slug}`}>
+              <a href={`/blog/${post?.slug}`}>
                 <div>
                   <Picture
                     formats={["avif", "webp"]}

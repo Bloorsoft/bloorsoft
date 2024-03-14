@@ -1,0 +1,29 @@
+---
+
+---
+
+<script is:inline>
+  const chatFrame = document.getElementById("chatwoot_live_chat_widget");
+  if (typeof window !== "undefined" && chatFrame === null) {
+    window.chatwootSettings = {
+      position: "right",
+      type: "expanded_bubble",
+      launcherTitle: "Chat with us",
+      hideMessageBubble: false,
+    };
+    (function (d, t) {
+      var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+      g.src = "https://app.chatwoot.com/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g, s);
+      g.onload = function () {
+        window.chatwootSDK.run({
+          websiteToken: "vqSbD6KWKYWZy91kex4VnfhG",
+          baseUrl: "https://app.chatwoot.com",
+        });
+      };
+    })(document, "script");
+  }
+</script>

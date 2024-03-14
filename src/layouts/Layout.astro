@@ -33,6 +33,49 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Meta Pixel Code -->
+    <!-- <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "959873562519280");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=959873562519280&ev=PageView&noscript=1"
+      /></noscript
+    > -->
+    <!-- End Meta Pixel Code -->
+
+    <script
+      defer
+      src="https://umami-production-dee0.up.railway.app/script.js"
+      data-website-id="0e36a549-d066-451c-9b61-e72256d9319b"></script>
+
     <SEO
       title={makeTitle}
       description="Astroship Pro - SAAS & Startup Website Template for Astro built with TailwindCSS."
@@ -67,5 +110,22 @@ const makeTitle = title
     <Navbar />
     <slot />
     <Footer margin={footerMargin} />
+    <script>
+      (function (d, t) {
+        var BASE_URL = "https://app.chatwoot.com";
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + "/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function () {
+          window.chatwootSDK.run({
+            websiteToken: "vqSbD6KWKYWZy91kex4VnfhG",
+            baseUrl: BASE_URL,
+          });
+        };
+      })(document, "script");
+    </script>
   </body>
 </html>

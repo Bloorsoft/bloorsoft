@@ -1,18 +1,18 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "@assets/hero-screenshot.png";
+import heroImage from "@assets/hero-2.png";
 import Link from "@components/ui/link.astro";
 import Container from "@components/container.astro";
 ---
 
 <div class="overflow-x-clip">
   <Container>
-    <main class="grid lg:grid-cols-5 place-items-center relative">
+    <main class="grid lg:grid-cols-4 place-items-center relative pt-8 pb-8 lg:pt-48 lg:pb-48">
       <div
-        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 right-0 top-0">
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 right-0 top-20">
       </div>
       <div
-        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 right-56 top-10">
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 right-56 top-30">
       </div>
 
       <div class="max-w-sm md:max-w-max lg:col-span-2">
@@ -50,12 +50,13 @@ import Container from "@components/container.astro";
           </Link> -->
         </div>
       </div>
-      <div class="py-3 lg:col-span-3 lg:-mr-44">
+      <div class="py-3 lg:col-span-2">
         <Image
           src={heroImage}
           alt="Astronaut in the air"
           loading="eager"
           fetchpriority="high"
+          class="scale-110"
         />
         <!-- <script
           type="module"
