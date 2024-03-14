@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": "/Users/parsatajik/code/bloorsoft/src",
+    "baseUrl": "./src",
     "paths": {
       "@lib/*": [
         "lib/*"

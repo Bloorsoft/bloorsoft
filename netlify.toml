@@ -1,0 +1,9 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
+  NODE_VERSION = "20"
+  YARN_VERSION = "1.22.19"
+  PNPM_VERSION = "8.6.2"
