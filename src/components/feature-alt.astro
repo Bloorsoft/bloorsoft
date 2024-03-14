@@ -3,7 +3,7 @@ import Badge from "@components/ui/badge.astro";
 import { Picture } from "astro:assets";
 import FeatureImg1 from "../assets/web-dev.svg";
 import FeatureImg2 from "../assets/mobile-dev.svg";
-import FeatureImg3 from "../assets/ai-main.svg"
+import FeatureImg3 from "../assets/ai-main.svg";
 import { Icon } from "astro-icon/components";
 import Link from "@components/ui/link.astro";
 
@@ -104,12 +104,19 @@ const { nomargin } = Astro.props;
 </div>
 
 <div class="grid md:grid-cols-2 py-10">
-  <div class="grid place-items-center pb-10 md:pb-0 md:order-2">
+  <div class="grid place-items-center pb-10 md:pb-0 md:order-2 relative">
+    <div
+      class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
+    </div>
+    <div
+      class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
+    </div>
     <Picture
       src={FeatureImg2}
       alt="Feature Image"
       formats={["avif", "webp"]}
       loading="lazy"
+      class="scale-90"
     />
   </div>
 
@@ -168,13 +175,18 @@ const { nomargin } = Astro.props;
 </div>
 
 <div class="grid md:grid-cols-2 py-10">
-  <div class="grid place-items-center w-full h-full">
+  <div class="grid place-items-center w-full h-full relative">
+    <div
+      class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
+    </div>
+    <div
+      class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
+    </div>
     <Picture
       src={FeatureImg3}
       alt="Feature Image"
       formats={["avif", "webp"]}
       loading="lazy"
-      class="object-cover w-96 h-96"
     />
   </div>
 
