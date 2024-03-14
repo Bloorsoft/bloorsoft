@@ -55,21 +55,21 @@ const faq = [
 <Container>
   <Sectionhead>
     <Fragment slot="title">FAQ</Fragment>
-    <Fragment slot="desc">Frequenty asked questions</Fragment>
+    <Fragment slot="desc">Frequently asked questions</Fragment>
   </Sectionhead>
 
-  <div class="grid divide-y divide-neutral-200 max-w-xl mx-auto mt-8">
+  <div class="grid divide-y divide-neutral-200 max-w-xl lg:max-w-5xl mx-auto mt-8">
     {
       faq.map((item) => (
         <div class="py-5">
           <details class="group">
             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
               <span> {item.question}</span>
-              <span class="transition group-open:rotate-180">
+              <span class="transition-transform duration-300 group-open:rotate-180">
                 <ArrowIcon />
               </span>
             </summary>
-            <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+            <p class="text-neutral-600 mt-3 transition-opacity duration-500 ease-in-out group-open:opacity-100 group-open:max-h-screen group-closed:opacity-0 group-closed:max-h-0 overflow-hidden">
               {item.answer}
             </p>
           </details>

@@ -1,0 +1,32 @@
+---
+import Sectionhead from "@components/sectionhead.astro";
+import Container from "@components/container.astro";
+import Card from "@components/card.astro";
+
+interface Props {
+  offers: string[];
+  subtitle: string;
+}
+
+const { offers, subtitle } = Astro.props as Props;
+---
+
+<Container>
+  <Sectionhead>
+    <!-- <Fragment slot="badge">Our Web Dev + Your Startup = 🚀</Fragment> -->
+    <Fragment slot="title">What We Offer</Fragment>
+    <Fragment slot="desc">
+      {subtitle}
+    </Fragment>
+  </Sectionhead>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+    {
+      offers.map((offer, index) => (
+        <Card noCaseStudy>
+          <div slot="title" class={`text-lg text-center font-bold ${index >= 2 ? 'md:col-start-2 md:col-end-3' : ''}`}>{offer}</div>
+        </Card>
+      ))
+    }
+  </div>
+</Container>

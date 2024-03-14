@@ -9,9 +9,10 @@ import Logos from "@components/logos.astro";
 import Testimonials from "@components/testimonials.astro";
 import Layout from "@layouts/Layout.astro";
 import Trending from "@components/trending.astro";
+import Faq from "@components/faq.astro";
 ---
 
-<Layout footerMargin={false} title={"AI-infused Web & Mobile Development for Startups"}>
+<Layout footerMargin={false} title={"AI Driven Web & Mobile Development for Startups"}>
   <Hero />
   <Logos />
   <Container>
@@ -19,9 +20,10 @@ import Trending from "@components/trending.astro";
   </Container>
   <Container>
     <FeatureGrid />
-    <!-- <Features /> -->
+    <Features />
   </Container>
   <Testimonials />
   <Trending />
+  <Faq />
   <Cta />
 </Layout>

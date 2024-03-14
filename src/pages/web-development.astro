@@ -2,9 +2,22 @@
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import Offers from "@components/offers.astro";
+import Faq from "@components/faq.astro";
+import Cta from "@components/cta.astro";
+import Features from "@components/features.astro";
+import Testimonials from "@components/testimonials.astro";
+
+const WHAT_WE_OFFER = [
+  "Rapid Prototyping for Quick Market Testing",
+  "Scalable Architectures to Grow with Your User Base",
+  "MVP Development to Validate Your Business Idea",
+  "Streamlined Workflows to Maximize Lean Resources",
+  "Integration with Essential Startup Tools and APIs",
+];
 ---
 
-<Layout title="Full Stack Web Development">
+<Layout title="Full Stack Web Development" footerMargin={false}>
   <Container>
     <Sectionhead>
       <Fragment slot="badge">Our Web Dev + Your Startup = 🚀</Fragment>
@@ -18,5 +31,82 @@ import Sectionhead from "@components/sectionhead.astro";
         ever-evolving needs of startups.
       </Fragment>
     </Sectionhead>
+
+    <Offers
+      offers={WHAT_WE_OFFER}
+      subtitle="Our full stack web development services are uniquely tailored to the needs of your startups"
+    />
   </Container>
+
+  <!-- Use features for the offers sections -->
+  <Container>
+    <Features />
+  </Container>
+
+  <!-- next section is: Our Process  -->
+  <!-- use one of those step by step tree like components  -->
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Our Process</Fragment>
+      <Fragment slot="desc">
+        Fast-paced, adaptable, scalable – web solutions designed for the
+        ever-evolving needs of startups.
+      </Fragment>
+    </Sectionhead>
+    <div class="flex flex-col items-center py-8 w-full">
+      <ol class="relative border-l border-gray-300">
+        {
+          [
+            {
+              title: "Cr  eate account",
+              description: "Vitae sed mi luctus laoreet.",
+            },
+            {
+              title: "Profile information",
+              description: "Cursus semper viverra facilisis et et some more.",
+            },
+            {
+              title: "Business information",
+              description: "Penatibus eu quis ante.",
+            },
+            { title: "Theme", description: "Faucibus nec enim leo et." },
+            {
+              title: "Preview",
+              description: "Iusto et officia maiores porro ad non quas.",
+            },
+          ].map((step, index) => (
+            <li class="mb-10 ml-16">
+              <div class="absolute -left-5 mt-1.5 w-10 h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+                <span class="h-6 w-6 rounded-full bg-purple-600" />
+              </div>
+              <h3 class="flex items-center text-md font-medium text-gray-900">
+                {step.title}
+              </h3>
+              <p class="mt-1 text-md text-gray-500 w-64">{step.description}</p>
+              <div class="top-[18px] left-3 w-16 h-[1px] bg-gray-300" />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </Container>
+
+  <!-- next section is: Why you should choose us for your startups -->
+  <Container>
+    <div class="mt-24">
+      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+        Why you should choose us for your <span class="text-indigo-600"
+          >startups</span
+        >
+      </h2>
+      <p class="text-lg mt-4 text-slate-600">
+        Behind every project is a startup's ambition turned into action. See the
+        real-world impact of our tailored tech solutions.
+      </p>
+    </div>
+  </Container>
+  <Testimonials showHeadings={false} />
+
+  <Faq />
+  <Cta />
 </Layout>
