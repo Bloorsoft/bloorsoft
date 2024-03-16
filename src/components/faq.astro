@@ -5,49 +5,51 @@ import { ArrowIcon } from "./ui/icons";
 
 const faq = [
   {
-    question: "What is Astroship's API-based SAAS platform?",
+    question: "Will my idea remain confidential with Bloorsoft?",
     answer:
-      "Astroship's API-based SAAS platform is a cloud-based software service that allows users to access and use a variety of API-powered tools and functionality.",
+      "Absolutely. We respect your intellectual property rights and the trust you place in us. Confidentiality is a cornerstone of our business, and we're ready to sign a non-disclosure agreement (NDA) before any discussion of your idea. Protecting your vision is as important to us as it is to you.",
   },
   {
-    question: "How does Astroship's billing work?",
+    question:
+      "Can I have an expert review your architecture plans before full development begins?",
     answer:
-      "Astroship offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other secure online payment method.",
+      "Certainly. If you wish to validate our architectural approach, we're open to working with a fractional CTO or an external consultant of your choosing to review our plans. This step ensures that you feel confident in our work's quality and integrity before moving forward. We're committed to building a solution that's not just robust but also aligns with industry best practices and your long-term vision.",
   },
   {
-    question: "Can I get a refund for my Astroship subscription?",
+    question: "How can I assess the quality of your code?",
     answer:
-      "Astroship offers a 30-day money-back guarantee for most of its subscription plans. If you are not satisfied with your subscription within the first 30 days, you can request a full refund. Refunds for subscriptions that have been active for longer than 30 days may be considered on a case-by-case basis.",
+      "Quality is Priority-0 at Bloorsoft. We adhere to coding standards and best practices, and our development process includes rigorous testing and peer reviews. We welcome you to review our code at any stage and can provide documentation and reports to verify our adherence to quality benchmarks.",
   },
   {
-    question: "How do I cancel my Astroship subscription?",
+    question: "How will performance be tracked and reported?",
     answer:
-      "To cancel your Astroship subscription, you can log in to your account and navigate to the subscription management page. From there, you should be able to cancel your subscription and stop future billing.",
+      "We believe in full transparency. Our project management tools give you real-time insights into the development progress. We establish KPIs early in the process, conduct regular check-ins, and provide you with sprint reports so you can measure our performance against agreed-upon objectives.",
   },
   {
-    question: "Can I try Astroship's API platform for free?",
+    question: "Is the code you develop future-proof?",
     answer:
-      "Astroship offers a free trial of its API platform for a limited time. During the trial period, you will have access to a limited set of features and functionality, but you will not be charged.",
+      "Our code is crafted with the future in mind, using scalable architectures and clean coding practices. We aim to make our code robust and adaptable to reduce the need for rewrites. However, technology evolves, and we ensure that any future transitions or updates can be integrated with minimal disruption.",
   },
   {
-    question: "How do I access Astroship's API documentation?",
+    question: "What happens after the project is completed?",
     answer:
-      "Astroship's API documentation is available on the company's website and can be accessed by logging in to your account. The documentation provides detailed information on how to use the API, as well as code examples and other resources.",
+      "Post-launch, we don’t disappear. We offer various support and maintenance packages to suit your needs, from occasional check-ups to ongoing development work. We're here to ensure your platform remains up-to-date and continues to serve your startup effectively.",
   },
   {
-    question: "How do I contact support?",
+    question:
+      "Why should we work with Bloorsoft instead of building an in-house team?",
     answer:
-      "If you need help with Astroship's API platform or have any other questions, you can contact the company's support team by submitting a support request through the website or by emailing support@Astroship.com.",
+      "Building a quality in-house team takes significant time and resources. By partnering with us, you gain immediate access to a diverse group of experts dedicated to your project. This approach allows you to focus on your core business without the overhead of recruiting, hiring, and managing additional employees.",
   },
   {
-    question: "Do you offer any discounts or promotions?",
+    question: "Are your services competitively priced?",
     answer:
-      "Astroship may offer discounts or promotions from time to time. To stay up-to-date on the latest deals and special offers, you can sign up for the company's newsletter or follow it on social media.",
+      "We provide value-driven development services that are competitively priced. Our aim is to deliver high-quality work within a budget that aligns with startup realities. We're upfront about costs and will work with you to find a pricing structure that fits your financial planning.",
   },
   {
-    question: "How does Astroship compare to other similar services?",
+    question: "How do you ensure timely delivery of the project?",
     answer:
-      "Astroship's API platform is a highly reliable and feature-rich service that offers a wide range of tools and functionality. It is competitively priced and offers a variety of billing options to suit different needs and budgets.",
+      "We use agile methodologies to manage projects, breaking down development into manageable sprints with deliverable milestones. This approach keeps the project on track and allows for adjustments as needed, ensuring we meet your timeline without compromising quality.",
   },
 ];
 ---
@@ -58,7 +60,8 @@ const faq = [
     <Fragment slot="desc">Frequently asked questions</Fragment>
   </Sectionhead>
 
-  <div class="grid divide-y divide-neutral-200 max-w-xl lg:max-w-5xl mx-auto mt-8">
+  <div
+    class="grid divide-y divide-neutral-200 max-w-xl lg:max-w-5xl mx-auto mt-8">
     {
       faq.map((item) => (
         <div class="py-5">

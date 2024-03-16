@@ -16,22 +16,25 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 });
 ---
 
-<Layout title="About" footerMargin={false}>
+<Layout title="Building the Future, One Startup at a Time" footerMargin={false}>
   <Container>
     <Sectionhead>
       <Fragment slot="badge">About Us</Fragment>
-      <Fragment slot="title">We're Building Future</Fragment>
+      <Fragment slot="title">
+        Building the Future, One <span class="text-indigo-600">Startup</span> at
+        a Time
+      </Fragment>
       <Fragment slot="desc">
         We're a multi-cultural team from around the world! We come from diverse
         backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special..
+        the job. This is what makes our team so special 💜
       </Fragment>
     </Sectionhead>
-    <div class="mt-6 text-center">
+    <!-- <div class="mt-6 text-center">
       <Link style="outline" size="sm" href="#" target="_blank" rel="noopener">
         Learn more →
       </Link>
-    </div>
+    </div> -->
     <div class="mt-16 border-y py-6 border-slate-100">
       <Logos />
     </div>
@@ -59,11 +62,16 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           <strong>Mission</strong>
         </h2>
         <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-500">
-          We're a multi-cultural team from around the world! We come from
-          diverse backgrounds, bringing different personalities, experiences and
-          skills to the job. This is what makes our team so special.
+          We believe in startups because we've seen what a few truly passionate
+          individuals can do. We want to help these people succeed by providing
+          them with the best startup focused technical expertise and resources.
         </p>
-        <ul class="grid mt-6 text-left gap-y-4">
+
+        <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-500">
+          Bloorsoft is only the beginning of our journey. We believe that we can fundamentally change the way startups are built and scaled. More on Bloor Ventures later.
+        </p>
+
+        <!-- <ul class="grid mt-6 text-left gap-y-4">
           <li class="flex items-center gap-3 text-slate-800">
             <Icon name="ph:check-circle-fill" class="w-5 h-5" />
 
@@ -81,7 +89,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 
             <span class="text-slate-600">Data Security & Privacy</span>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
 

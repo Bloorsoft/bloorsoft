@@ -10,8 +10,8 @@ image:
 publishDate: "2022-11-09 16:39"
 category: "Courses"
 technologies: ["Astro", "TailwindCSS", "Netlify", "Starlight"]
-badge: "Social Projects"
-websiteLink: "https://helprefugee.ca"
+badge: "Our Social Projects"
+websiteLink: "https://github.com/bloorsoft/help-refugee"
 ossLink: "/open-source/help-refugee"
 ---
 

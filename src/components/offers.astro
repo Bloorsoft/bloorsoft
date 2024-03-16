@@ -20,10 +20,10 @@ const { offers, subtitle } = Astro.props as Props;
     </Fragment>
   </Sectionhead>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+  <div class="flex flex-wrap gap-8 mt-8 justify-center items-center">
     {
       offers.map((offer, index) => (
-        <Card noCaseStudy>
+        <Card noCaseStudy class="max-w-xs">
           <div slot="title" class={`text-lg text-center font-bold ${index >= 2 ? 'md:col-start-2 md:col-end-3' : ''}`}>{offer}</div>
         </Card>
       ))
