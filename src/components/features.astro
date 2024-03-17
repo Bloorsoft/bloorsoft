@@ -3,50 +3,50 @@
 import Badge from "@components/ui/badge.astro";
 import { Icon } from "astro-icon/components";
 
-const defFeatures = [
+const OUR_PROCESS = [
   {
-    title: "Bring Your Own Framework",
+    title: "Lean Planning for Cost-Efficiency",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "fluent:document-javascript-24-regular",
+      "In this initial phase, we focus on understanding your business goals, target audience, and the unique value proposition of your startup. We establish the project's scope with a keen eye on cost efficiency, ensuring every feature we plan is essential and provides real value.",
+    icon: "fluent:calendar-edit-24-regular",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Iterative Development for Continuous Improvement",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "fluent:trophy-24-regular",
+      "Our development process is agile, allowing for incremental improvements with regular review cycles. This approach means you get to see tangible progress, provide feedback, and we refine the product in real-time, ensuring it evolves with your needs and user feedback.",
+    icon: "fluent:code-24-regular",
   },
   {
-    title: "On-Demand Components",
+    title: "Feedback Loops with Stakeholders for Product-Market Fit",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "fluent:box-24-regular",
+      "We prioritize communication with all stakeholders, facilitating feedback loops that are vital for aligning the product with market demands. Engaging in active listening, we fine-tune functionalities to ensure the end product resonates with your target users and market fit.",
+    icon: "fluent:arrow-clockwise-24-regular",
   },
   {
-    title: "Broad Integration",
+    title: "Deployment Strategies for Fast Go-to-Market",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "fluent:box-multiple-24-regular",
+      "Deploying your web application swiftly and securely is crucial. We implement CI/CD pipelines for automated testing and deployment, which accelerates the go-to-market process. Our deployment strategies are designed for startups looking to make an impact quickly and reliably.",
+    icon: "fluent:app-recent-24-regular",
   },
   {
-    title: "SEO Enabled",
+    title: " Post-Launch Support and Scaling",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "fluent:book-search-24-regular",
+      "After launch, our commitment continues with performance monitoring, technical support, and scalable updates to meet your growing startup’s needs and user feedback, ensuring seamless evolution of your platform.",
+    icon: "fluent:person-support-24-regular",
   },
   {
-    title: "Community",
+    title: "Supporting Your Transition to In-House Teams",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "As your startup grows, we support your transition to in-house teams by providing comprehensive documentation, knowledge transfer, and training. We ensure a smooth handover, so your team can continue to build on the solid foundation we’ve laid.",
     icon: "fluent:people-community-24-regular",
   },
 ];
 
 const {
-  features = defFeatures,
-  badge = "MORE FEATURES",
-  title = "We've got you covered",
-  desc = "Our template covers all things SAAS. If you don't find what you're looking for, contact us and we'll either help you or steer you in the right direction.",
+  features = OUR_PROCESS,
+  badge = "How We Do It",
+  title = "Our Process",
+  desc = "An approach that’s tailored to startups – lean, iterative, and feedback-oriented.",
 } = Astro.props;
 ---
 
