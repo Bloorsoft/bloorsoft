@@ -9,25 +9,32 @@ import Features from "@components/features.astro";
 import Testimonials from "@components/testimonials.astro";
 import { Icon } from "astro-icon/components";
 import { Picture } from "astro:assets";
-import EmployeeImg from "../assets/features/web-techs.png";
+import WebTechnologies from "../assets/web-technologies.png";
 import Card from "@components/card.astro";
 import ArteficeImg from "../assets/works/artefice-3.png";
 import TeleVUImg from "../assets/works/televu-2.png";
-import Link from "@components/ui/link.astro";
-import FeatureAlt from "@components/feature-alt.astro";
-import FeatureImg1 from "../assets/web-dev.svg";
 import Badge from "@components/ui/badge.astro";
+import EngagementModels from "../assets/engagement-models.png";
+import StartupExpertise from "../assets/startup-expertise.png";
+import DataDriven from "../assets/data-driven.png";
 
 const WHAT_WE_OFFER = [
-  "Rapid Prototyping for Quick Market Testing",
-  "Scalable Architectures to Grow with Your User Base",
-  "MVP Development to Validate Your Business Idea",
-  "Streamlined Workflows to Maximize Lean Resources",
-  "Integration with Essential Startup Tools and APIs",
+  {
+    title: "Rapid Prototyping and MVP Development",
+    desc: "Quickly turn your ideas into testable products to validate your market fit and refine user experience, saving time and resources.",
+  },
+  {
+    title: "Scalable Web Architectures",
+    desc: "Build with future growth in mind, using technologies that allow your platform to expand seamlessly as your user base grows.",
+  },
+  {
+    title: "Startup-Focused UX/UI Design",
+    desc: "Create intuitive and engaging user interfaces that resonate with your target audience, driving user adoption and satisfaction.",
+  },
 ];
 ---
 
-<Layout title="Full Stack Web Development" footerMargin={false}>
+<Layout title="Full Stack Web Development for Startups" footerMargin={false}>
   <Container>
     <Sectionhead>
       <Fragment slot="badge">Our Web Dev + Your Startup = 🚀</Fragment>
@@ -46,251 +53,6 @@ const WHAT_WE_OFFER = [
       offers={WHAT_WE_OFFER}
       subtitle="Our full stack web development services are uniquely tailored to the needs of your startups"
     />
-  </Container>
-
-  <Container>
-    <Features />
-  </Container>
-
-  <!-- <Container>
-    <Sectionhead>
-      <Fragment slot="badge">Stack Agnostic Full Stack Devs</Fragment>
-      <Fragment slot="title">Technologies That We Use</Fragment>
-      <Fragment slot="desc">
-        Fast-paced, adaptable, scalable – web solutions designed for the
-        ever-evolving needs of startups.
-      </Fragment>
-    </Sectionhead>
-  </Container> -->
-
-  <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-36">
-    <div class="relative">
-      <div
-        class="absolute hidden md:block w-96 h-96 bg-purple-100 rounded-full right-0 top-1/3 -z-10">
-      </div>
-      <div
-        class="absolute hidden md:block w-44 h-44 bg-purple-100 rounded-full left-10 top-1/4 -z-10">
-      </div>
-      <div
-        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
-      </div>
-      <div
-        class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
-      </div>
-      <Picture
-        formats={["avif", "webp"]}
-        src={EmployeeImg}
-        alt="Happy Team"
-        class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
-        loading="lazy"
-      />
-    </div>
-    <div class="place-self-center p-8 md:p-16 lg:p-24">
-      <h2 class="text-5xl text-gray-800 tracking-tight -mt-2">
-        <span class="text-indigo-600 font-bold">Web</span>
-        <strong>Technologies that We Use</strong>
-      </h2>
-      <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-500">
-        We are tech-agnostic engineers, selecting the optimal stack to meet each
-        project’s unique challenges with agility and expertise. Our core
-        proficiencies include:
-      </p>
-      <ul class="grid mt-6 text-left gap-y-4">
-        <li class="flex items-center gap-3 text-slate-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-          <span class="text-slate-600"
-            ><span class="font-bold">React & TypeScript/JavaScript:</span> For responsive,
-            efficient front-ends and robust, scalable back-ends.</span
-          >
-        </li>
-
-        <li class="flex items-center gap-3 text-slate-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-          <span class="text-slate-600"
-            ><span class="font-bold">AWS, Netlify, & Vercel:</span> For secure, reliable
-            cloud infrastructure and seamless deployment.</span
-          >
-        </li>
-
-        <li class="flex items-center gap-3 text-slate-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-          <span class="text-slate-600"
-            ><span class="font-bold">Modern DevOps Tools:</span> From Docker to CI/CD,
-            we employ the latest in DevOps for seamless deployment and operations.
-          </span>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- next section is: Why you should choose us for your startups -->
-  <Container>
-    <div class="mt-48">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-        Why You Should Choose Us for Your <span class="text-indigo-600"
-          >Startup</span
-        >
-      </h2>
-      <p class="text-lg mt-4 text-slate-600">
-        Behind every project is a startup's ambition turned into action. See the
-        real-world impact of our tailored tech solutions.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 py-10">
-      <div class="grid place-items-center relative">
-        <div
-          class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
-        </div>
-        <div
-          class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
-        </div>
-        <Picture
-          src={FeatureImg1}
-          alt="Feature Image"
-          formats={["avif", "webp"]}
-          loading="lazy"
-          class="scale-90"
-        />
-      </div>
-
-      <div class="grid place-items-center">
-        <div class="max-w-lg">
-          <Badge color="purple" class="-ml-px">
-            Based on Your Startup's Needs
-          </Badge>
-          <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
-            Flexible Engagement Models
-          </h3>
-          <p class="mt-4 text-slate-600 [text-wrap:balance]">
-            We offer adaptable engagement models to fit startup budgets,
-            providing scalable solutions as your business grows.
-          </p>
-
-          <div class="flex items-center gap-4 mt-6">
-            <Link
-              href="/contact"
-              size="sm"
-              class="inline-flex items-center group gap-px">
-              <span>Get started</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
-                <path
-                  fill-rule="evenodd"
-                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 py-10">
-      <div class="grid place-items-center pb-10 md:pb-0 md:order-2 relative">
-        <div
-          class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
-        </div>
-        <div
-          class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
-        </div>
-        <Picture
-          src={FeatureImg1}
-          alt="Feature Image"
-          formats={["avif", "webp"]}
-          loading="lazy"
-          class="scale-90"
-        />
-      </div>
-
-      <div class="grid place-items-center">
-        <div class="max-w-lg">
-          <Badge color="purple" class="-ml-px">We Understand Startups</Badge>
-          <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
-            Startup Ecosystem Expertise
-          </h3>
-          <p class="mt-4 text-slate-600 [text-wrap:balance]">
-            With experiences from Toronto to SF, we bring a deep understanding
-            of startup needs and dynamics to our tech solutions.
-          </p>
-
-          <div class="flex items-center gap-4 mt-6">
-            <Link
-              href="/contact"
-              size="sm"
-              class="inline-flex items-center group gap-px">
-              <span>Get started</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
-                <path
-                  fill-rule="evenodd"
-                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 py-10">
-      <div class="grid place-items-center relative">
-        <div
-          class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
-        </div>
-        <div
-          class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
-        </div>
-        <Picture
-          src={FeatureImg1}
-          alt="Feature Image"
-          formats={["avif", "webp"]}
-          loading="lazy"
-          class="scale-90"
-        />
-      </div>
-
-      <div class="grid place-items-center">
-        <div class="max-w-lg">
-          <Badge color="purple" class="-ml-px">Numbers Don't Lie</Badge>
-          <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
-            Data-Driven Development
-          </h3>
-          <p class="mt-4 text-slate-600 [text-wrap:balance]">
-            Our strategic development is data-informed, ensuring precise,
-            effective solutions that align with your startup’s goals.
-          </p>
-
-          <div class="flex items-center gap-4 mt-6">
-            <Link
-              href="/contact"
-              size="sm"
-              class="inline-flex items-center group gap-px">
-              <span>Get started</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-4 h-4 mt-px group-hover:translate-x-1 transition-transform">
-                <path
-                  fill-rule="evenodd"
-                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
   </Container>
 
   <Container>
@@ -354,6 +116,178 @@ const WHAT_WE_OFFER = [
           Visit TeleVU
         </a>
       </Card>
+    </div>
+  </Container>
+
+  <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-36">
+    <div class="relative flex items-center justify-center">
+      <div
+        class="absolute hidden md:block w-96 h-96 bg-purple-100 rounded-full right-0 top-1/3 -z-10">
+      </div>
+      <div
+        class="absolute hidden md:block w-44 h-44 bg-purple-100 rounded-full left-10 top-1/4 -z-10">
+      </div>
+      <div
+        class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
+      </div>
+      <div
+        class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
+      </div>
+      <Picture
+        formats={["avif", "webp"]}
+        src={WebTechnologies}
+        alt="Happy Team"
+        class="rounded-xl w-full max-w-lg mx-auto"
+        loading="lazy"
+      />
+    </div>
+    <div class="place-self-center p-8 md:p-16 lg:p-24">
+      <h2 class="text-5xl text-gray-800 tracking-tight -mt-2">
+        <span class="text-indigo-600 font-bold">Web</span>
+        <strong>Technologies that We Use</strong>
+      </h2>
+      <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-500">
+        We are tech-agnostic engineers, selecting the optimal stack to meet each
+        project’s unique challenges with agility and expertise. Our core
+        proficiencies include:
+      </p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <li class="flex items-center gap-3 text-slate-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-slate-600"
+            ><span class="font-bold">React & TypeScript/JavaScript:</span> For responsive,
+            efficient front-ends and robust, scalable back-ends.</span
+          >
+        </li>
+
+        <li class="flex items-center gap-3 text-slate-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-slate-600"
+            ><span class="font-bold">AWS, Netlify, & Vercel:</span> For secure, reliable
+            cloud infrastructure and seamless deployment.</span
+          >
+        </li>
+
+        <li class="flex items-center gap-3 text-slate-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+          <span class="text-slate-600"
+            ><span class="font-bold">Modern DevOps Tools:</span> From Docker to CI/CD,
+            we employ the latest in DevOps for seamless deployment and operations.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <Container>
+    <Features />
+  </Container>
+
+  <!-- next section is: Why you should choose us for your startups -->
+  <Container class="mt-24">
+    <Sectionhead>
+      <!-- <Fragment slot="badge">Bloorsoft's Powers</Fragment> -->
+      <Fragment slot="title">
+        Why You Should Choose Us for Your <span class="text-indigo-600"
+          >Startup</span
+        >
+      </Fragment>
+      <Fragment slot="desc">
+        Behind every project is a startup's ambition turned into action. See the
+        real-world impact of our tailored tech solutions.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 max-w-5xl mx-auto mt-10">
+      <div class="grid place-items-center relative">
+        <Picture
+          src={EngagementModels}
+          alt="Feature Image"
+          formats={["avif", "webp"]}
+          loading="lazy"
+          class="scale-90 max-w-56 max-h-56"
+        />
+      </div>
+
+      <div class="grid place-items-center">
+        <div class="max-w-lg">
+          <Badge color="purple" class="-ml-px">
+            Based on Your Startup's Needs
+          </Badge>
+          <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+            Flexible Engagement Models
+          </h3>
+          <p class="mt-4 text-slate-600 [text-wrap:balance]">
+            We offer adaptable engagement models to fit startup budgets,
+            providing scalable solutions as your business grows.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 max-w-5xl mx-auto">
+      <div class="grid place-items-center relative">
+        <!-- <div
+          class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
+        </div>
+        <div
+          class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
+        </div> -->
+        <Picture
+          src={StartupExpertise}
+          alt="Feature Image"
+          formats={["avif", "webp"]}
+          loading="lazy"
+          class="scale-90 max-w-56 max-h-56"
+        />
+      </div>
+
+      <div class="grid place-items-center">
+        <div class="max-w-lg">
+          <Badge color="purple" class="-ml-px">We Understand Startups</Badge>
+          <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+            Startup Ecosystem Expertise
+          </h3>
+          <p class="mt-4 text-slate-600 [text-wrap:balance]">
+            With experiences from Toronto to SF, we bring a deep understanding
+            of startup needs and dynamics to our tech solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 max-w-5xl mx-auto">
+      <div class="grid place-items-center relative">
+        <!-- <div
+          class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 left-0 top-0">
+        </div>
+        <div
+          class="absolute w-48 h-48 lg:w-96 lg:h-96 blur-2xl -z-10 bg-gradient-radial from-purple-200 left-36 top-10">
+        </div> -->
+        <Picture
+          src={DataDriven}
+          alt="Feature Image"
+          formats={["avif", "webp"]}
+          loading="lazy"
+          class="scale-90 max-w-56 max-h-56"
+        />
+      </div>
+
+      <div class="grid place-items-center">
+        <div class="max-w-lg">
+          <Badge color="purple" class="-ml-px">Numbers Don't Lie</Badge>
+          <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+            Data-Driven Development
+          </h3>
+          <p class="mt-4 text-slate-600 [text-wrap:balance]">
+            Our strategic development is data-informed, ensuring precise,
+            effective solutions that align with your startup’s goals.
+          </p>
+        </div>
+      </div>
     </div>
   </Container>
 

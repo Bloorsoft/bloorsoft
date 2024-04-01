@@ -4,7 +4,7 @@ title: "Artefice - Where AI Meets Fashion"
 snippet: "We created a custom e-commerce platform for Artefice, a fashion brand that uses AI to create unique designs."
 image: 
   { 
-    src: "/src/assets/works/artefice-3.png", 
+    src: "/src/assets/works/artefice-5.png", 
     alt: "alt text" 
   }
 publishDate: "2024-03-01 16:39"

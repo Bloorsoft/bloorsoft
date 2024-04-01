@@ -1,0 +1,38 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Offers from "@components/offers.astro";
+
+const WHAT_WE_OFFER = [
+  {
+    title: "Cross-Platform Development",
+    desc:
+      "We build mobile applications that work seamlessly across iOS and Android platforms.",
+  }
+]
+---
+
+<Layout
+  title="Mobile Application Development for Startups"
+  footerMargin={false}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="badge">Our Web Dev + Your Startup = 🚀</Fragment>
+      <Fragment slot="title">
+        Agile Web Development for Dynamic <span class="text-indigo-600"
+          >Startups</span
+        >
+      </Fragment>
+      <Fragment slot="desc">
+        Fast-paced, adaptable, scalable – web solutions designed for the
+        ever-evolving needs of startups.
+      </Fragment>
+    </Sectionhead>
+
+    <Offers
+      offers={WHAT_WE_OFFER}
+      subtitle="Our full stack web development services are uniquely tailored to the needs of your startups"
+    />
+  </Container>
+</Layout>

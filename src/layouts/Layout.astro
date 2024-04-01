@@ -15,7 +15,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
-  Astro.site,
+  Astro.site
 ).toString();
 
 const { title, footerMargin = true } = Astro.props;
@@ -104,13 +104,18 @@ const makeTitle = title
         content-visibility: auto;
       }
     </style>
-    <ViewTransitions />
   </head>
-  <body>
+  <body class="animate-fadeIn">
     <Navbar />
     <slot />
     <Footer margin={footerMargin} />
-    <script>
+
+    <script is:in-line>
+      window.chatwootSettings = {
+        position: "right",
+        type: "expanded_bubble",
+        launcherTitle: "Chat with us",
+      };
       (function (d, t) {
         var BASE_URL = "https://app.chatwoot.com";
         var g = d.createElement(t),

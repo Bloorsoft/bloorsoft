@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from "astro";
 import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
@@ -14,6 +15,10 @@ import Cta from "@components/cta.astro";
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
 });
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/team/*.{jpeg,jpg,png,gif}",
+);
 ---
 
 <Layout title="Building the Future, One Startup at a Time" footerMargin={false}>
@@ -70,26 +75,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         <p class="text-lg max-w-xl mt-4 leading-relaxed text-slate-500">
           Bloorsoft is only the beginning of our journey. We believe that we can fundamentally change the way startups are built and scaled. More on Bloor Ventures later.
         </p>
-
-        <!-- <ul class="grid mt-6 text-left gap-y-4">
-          <li class="flex items-center gap-3 text-slate-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-slate-600">Intelligent Task Management</span>
-          </li>
-
-          <li class="flex items-center gap-3 text-slate-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-slate-600">Real-time Collaboration</span>
-          </li>
-
-          <li class="flex items-center gap-3 text-slate-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-slate-600">Data Security & Privacy</span>
-          </li>
-        </ul> -->
       </div>
     </div>
 
@@ -98,7 +83,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         Core <span class="text-indigo-600 font-bold">Team</span>
       </h2>
       <p class="text-lg mt-4 text-slate-600 text-center">
-        Bloorsoft is managed by these awesome individuals.
+        Bloorsoft is powered by these awesome individuals.
       </p>
     </div>
 
@@ -108,8 +93,8 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           <div class="group">
             <div class="w-full aspect-square">
               <Picture
-                src={teamMemberEntry?.data?.avatar?.src}
-                alt={teamMemberEntry?.data?.avatar?.alt || "Team Member"}
+                src={images[teamMemberEntry.data.avatar.src]()}
+                alt={teamMemberEntry.data.avatar.alt || "Team Member"}
                 loading="lazy"
                 width={400}
                 height={400}

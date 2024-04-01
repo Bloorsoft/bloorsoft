@@ -3,8 +3,13 @@ import Sectionhead from "@components/sectionhead.astro";
 import Container from "@components/container.astro";
 import Card from "@components/card.astro";
 
+interface Offer {
+  title: string;
+  desc: string;
+}
+
 interface Props {
-  offers: string[];
+  offers: Offer[];
   subtitle: string;
 }
 
@@ -24,7 +29,14 @@ const { offers, subtitle } = Astro.props as Props;
     {
       offers.map((offer, index) => (
         <Card noCaseStudy class="max-w-xs">
-          <div slot="title" class={`text-lg text-center font-bold ${index >= 2 ? 'md:col-start-2 md:col-end-3' : ''}`}>{offer}</div>
+          <div
+            slot="title"
+            class={`text-lg font-bold ${index >= 2 ? "md:col-start-2 md:col-end-3" : ""}`}>
+            {offer.title}
+          </div>
+          <div slot="desc">
+            {offer.desc}
+          </div>
         </Card>
       ))
     }

@@ -12,6 +12,7 @@ module.exports = {
       },
       animation: {
         marquee: "marquee 50s linear infinite",
+        fadeIn: "fadeIn 0.3s ease-in-out forwards",
       },
       keyframes: {
         marquee: {
@@ -21,6 +22,10 @@ module.exports = {
           to: {
             transform: "translateX(calc(-100% - 2.5rem))",
           },
+        },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
       },
     },
