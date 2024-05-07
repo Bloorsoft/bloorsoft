@@ -34,7 +34,7 @@ const { page } = Astro.props;
 const { data: allSortedPosts } = page;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/works/*.{jpeg,jpg,png,gif}",
+  "/src/assets/works/*.{jpeg,jpg,png,gif}"
 );
 ---
 
@@ -74,7 +74,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                     src={images[image.src]()}
                     alt={image.alt}
                     formats={["avif", "webp"]}
-                    class="h-full w-full object-fit scale-150"
+                    class="h-full w-full object-fit"
                     loading="lazy"
                   />
                 </Fragment>
@@ -94,7 +94,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                   </a>
                 )}
               </Card>
-            ),
+            )
           )
         }
       </div>

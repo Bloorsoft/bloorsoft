@@ -4,7 +4,7 @@ title: "Bloor Plumbing - Supercharging SMBs"
 snippet: "We revamped Bloor Plumbing's CMS and built a custom CRM for their specific needs."
 image: 
   { 
-    src: "/src/assets/works/bloorplumbing-2.png", 
+    src: "/src/assets/works/bloor-plumbing.jpeg", 
     alt: "Bloor Plumbing - Supercharging SMBs"
   }
 publishDate: "2024-03-01 16:39"

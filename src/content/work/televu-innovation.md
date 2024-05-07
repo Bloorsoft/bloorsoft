@@ -4,7 +4,7 @@ title: "TeleVU - TelePresence Ecosystem for Healthcare Professionals"
 snippet: "From implementing custom chat microservices to major UI/UX overhauls, we helped TeleVU innovate in the health care sector."
 image:
   {
-    src: "/src/assets/works/televu-2.png",
+    src: "/src/assets/works/televu.jpeg",
     alt: "TeleVU Innovation - Changing Healthcare Through Technology",
   }
 publishDate: "2022-11-09 16:39"

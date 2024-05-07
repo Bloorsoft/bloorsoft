@@ -1,11 +1,11 @@
 ---
 draft: false
 name: "Parsa Tajik"
-title: "Technical Director"
+title: "Founder & Technical Director"
 avatar:
   {
     src: "/src/assets/team/parsa-tajik.jpg",
     alt: "Parsa Tajik",
   }
-publishDate: "2024-03-08 03:23"
+publishDate: "2024-04-26 03:23"
 ---

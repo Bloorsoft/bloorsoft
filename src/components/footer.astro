@@ -13,10 +13,6 @@ const footermenu = {
       path: "/about",
     },
     {
-      title: "Blog",
-      path: "/blog",
-    },
-    {
       title: "Contact",
       path: "/contact",
     },
@@ -25,22 +21,22 @@ const footermenu = {
       path: "/careers",
     },
   ],
-  product: [
+  links: [
     {
-      title: "For Startups",
-      path: "#",
+      title: "Home",
+      path: "/",
     },
     {
-      title: "Features",
-      path: "#",
+      title: "Blog",
+      path: "/blog",
     },
     {
-      title: "Pricing",
-      path: "/pricing",
+      title: "Work",
+      path: "/work",
     },
     {
-      title: "Integrations",
-      path: "#",
+      title: "Open Source",
+      path: "/open-source",
     },
   ],
   resources: [
@@ -116,7 +112,7 @@ const footermenu = {
           >
         </div>
       </div>
-      <!-- <div>
+      <div>
         <h3 class="font-medium text-sm text-slate-800">Company</h3>
         <div class="flex flex-col mt-3">
           {
@@ -129,12 +125,12 @@ const footermenu = {
             ))
           }
         </div>
-      </div> -->
+      </div>
       <div>
-        <h3 class="font-medium text-sm text-slate-800">Product</h3>
+        <h3 class="font-medium text-sm text-slate-800">Links</h3>
         <div class="flex flex-col mt-3">
           {
-            footermenu.product.map((item) => (
+            footermenu.links.map((item) => (
               <a
                 href={item.path || "#"}
                 class="py-2 text-sm text-slate-600 hover:text-indigo-600">
@@ -145,7 +141,7 @@ const footermenu = {
         </div>
       </div>
       <div>
-        <h3 class="font-medium text-sm text-slate-800">Resources</h3>
+        <h3 class="font-medium text-sm text-slate-800">Other</h3>
         <div class="flex flex-col mt-3">
           {
             footermenu.resources.map((item) => (
@@ -174,13 +170,13 @@ const footermenu = {
           >Tailwind CSS</a
         > 💜
       </p>
-      <p class="text-center text-xs text-slate-600 mt-2">
+      <!-- <p class="text-center text-xs text-slate-600 mt-2">
         <a href="/terms" class="hover:text-indigo-500"> Terms</a> ・ <a
           href="/privacy"
           class="hover:text-indigo-500">
           Privacy</a
         >
-      </p>
+      </p> -->
     </Container>
   </div>
 </footer>

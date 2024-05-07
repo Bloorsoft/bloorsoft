@@ -1,17 +1,12 @@
 ---
-// @ts-ignore
-import { Picture, Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import Card from "@components/card.astro";
-import Link from "@components/ui/link.astro";
-import IntegrationImg from "../assets/integrations.svg?url";
-import FeatureImgOne from "../assets/features/2.png";
-import FeatureImgTwo from "../assets/features/2.png";
-import FeatureImgThree from "../assets/features/3.png";
-import ArteficeImg from "../assets/works/artefice-4.png";
-import TeleVUImg from "../assets/works/televu-2.png";
-import QuantumImg from "../assets/works/quantum-1.png";
+import ArteficeImg from "../assets/works/artefice.jpeg";
+import TeleVUImg from "../assets/works/televu.jpeg";
 import BloorPlumbingImg from "../assets/works/bloorplumbing-2.png";
-import RahhImg from "../assets/works/rahh-2.png";
+import NexaOddsImg from "../assets/works/nexavision.jpeg";
+import StreamlineImg from "../assets/works/streamline-climate.jpg";
+import SelesteImg from "../assets/works/seleste.jpeg";
 ---
 
 <div class="mt-24">
@@ -54,7 +49,7 @@ import RahhImg from "../assets/works/rahh-2.png";
         src={TeleVUImg}
         alt="TeleVU Innovation website image"
         formats={["avif", "webp"]}
-        class="h-full w-full object-contain scale-125"
+        class="h-full w-full object-contain"
         loading="lazy"
       />
     </Fragment>
@@ -77,36 +72,36 @@ import RahhImg from "../assets/works/rahh-2.png";
   <Card color="indigo" size="sm" caseStudyLink="/work/quantum">
     <Fragment slot="image">
       <Picture
-        src={QuantumImg}
-        alt="Feature image"
+        src={NexaOddsImg}
+        alt="Nexa Odds website image"
         formats={["avif", "webp"]}
-        class="h-full w-full object-fit scale-150"
+        class="h-full w-full object-fit"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Quantum</span>
-    <span slot="title">Mobile App + Entertainment</span>
+    <span slot="badge">Nexa Odds</span>
+    <span slot="title">Computer Vision + Basketball</span>
     <span slot="desc">
-      Connecting Toronto's top influencers with premium entertainment brands to
-      supercharge affiliate marketing.</span
-    >
+      We helped the Nexa team build a responsive web app to help enthusiasts
+      with utilizing their unique analytics.
+    </span>
   </Card>
 
   <Card color="purple" size="sm" caseStudyLink="/work/rahh">
     <Fragment slot="image">
       <Picture
-        src={RahhImg}
-        alt="Feature image"
+        src={StreamlineImg}
+        alt="Streamline Climate website image"
         formats={["avif", "webp"]}
         class="h-full w-full object-contain"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Rahh</span>
-    <span slot="title">360 VR + Web</span>
+    <span slot="badge">Streamline Climate</span>
+    <span slot="title">Web Development + Climate Change</span>
     <span slot="desc">
-      Rahh wanted a unique way to showcase their homes during Covid-19 and we
-      built a 360 VR experience for them.
+      Streamline wanted a Microsoft OneDrive integration for their platform. We
+      built it in 2 weeks.
     </span>
     <a
       slot="link"
@@ -116,28 +111,28 @@ import RahhImg from "../assets/works/rahh-2.png";
     </a>
   </Card>
 
-  <Card size="sm" caseStudyLink="/work/bloor-plumbing">
+  <Card size="sm" caseStudyLink="/work/seleste" color="indigo">
     <Fragment slot="image">
       <!-- // svg image. cannot use <picture/> as of now -->
       <Picture
-        src={BloorPlumbingImg}
+        src={SelesteImg}
         alt="Feature image"
         formats={["avif", "webp"]}
         class="h-full w-full object-contain"
         loading="lazy"
       />
     </Fragment>
-    <span slot="badge">Bloor Plumbing</span>
-    <span slot="title">CRM + CMS + SMBs</span>
+    <span slot="badge">Seleste</span>
+    <span slot="title">Mobile Development + Smart Glasses</span>
     <span slot="desc">
-      We revamped Bloor Plumbing's CMS and built a custom CRM for their specific
-      needs.</span
+      Helping the visually impared with technology. We teamed up with Seleste to
+      improve their website and mobile app.</span
     >
     <a
       slot="link"
-      href="https://bloorplumbing.com/"
+      href="https://seleste.co/"
       class="text-sm px-2 transition py-1 text-slate-600 hover:text-indigo-600 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:outline-none focus-visible:shadow-outline-indigo rounded-full">
-      Visit Bloor Plumbing
+      Visit Seleste
     </a>
   </Card>
 </div>

@@ -7,7 +7,8 @@ import Container from "@components/container.astro";
 
 <div class="overflow-x-clip">
   <Container>
-    <main class="grid lg:grid-cols-4 place-items-center relative pt-8 pb-8 lg:pt-40 lg:pb-40">
+    <main
+      class="grid lg:grid-cols-4 place-items-center relative pt-8 pb-8 lg:pt-40 lg:pb-40">
       <div
         class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-200 right-0 top-20">
       </div>
@@ -18,9 +19,14 @@ import Container from "@components/container.astro";
       <div class="max-w-sm md:max-w-max lg:col-span-2">
         <h1
           class="text-2xl lg:text-3xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter [text-wrap:balance] text-center lg:text-start">
-          <span
+          <!-- <span
             >Empowering <span class="text-indigo-600">Startups</span> with AI Driven
             Web and Mobile Development.
+          </span> -->
+          <span class="leading-10"
+            >All Around Software Development for <span class="text-indigo-600"
+              >Startups</span
+            >.
           </span>
           <span class="block">From Toronto to SF.</span>
         </h1>
@@ -50,7 +56,8 @@ import Container from "@components/container.astro";
           </Link> -->
         </div>
       </div>
-      <div class="py-3 lg:col-span-2 w-full h-full flex justify-center items-center">
+      <div
+        class="py-3 lg:col-span-2 w-full h-full flex justify-center items-center">
         <Image
           src={heroImage}
           alt="Astronaut in the air"
