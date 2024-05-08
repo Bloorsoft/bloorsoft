@@ -15,4 +15,4 @@ websiteLink: "https://github.com/bloorsoft/help-refugee"
 ossLink: "/open-source/help-refugee"
 ---
 
-# About Help Refugee
+Hey! We're still writing this article :)

@@ -15,13 +15,4 @@ websiteLink: "https://github.com/chatwoot/chatwoot"
 ossLink: "/open-source/umami-analytics"
 ---
 
-## Why we use Umami?
-
-
-## How to setup Umami for your website?
-
-follow this guide.
-
-``` bash
-this is a code block
-```
+Hey! We're still writing this article :)

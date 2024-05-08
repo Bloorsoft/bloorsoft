@@ -15,4 +15,6 @@ websiteLink: "https://github.com/chatwoot/chatwoot"
 ossLink: "/open-source/chatwoot"
 ---
 
-## Why we use Chatwoot?
+Hey! We're still writing this article :)
+
+

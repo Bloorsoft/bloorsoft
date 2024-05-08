@@ -6,8 +6,6 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/pagination.astro";
 
-// Sort content entries by publication date
-
 export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 6;
   const allPosts = await getCollection("blog", ({ data }) => {

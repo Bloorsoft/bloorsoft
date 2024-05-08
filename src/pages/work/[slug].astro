@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import { Picture } from "astro:assets";
 import Badge from "@components/ui/badge.astro";
+import Cta from "@components/cta.astro";
 
 export async function getStaticPaths() {
   const workEntries = await getCollection("work");
@@ -19,7 +20,7 @@ const { title, snippet, image, technologies } = entry.data;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${title} - Case Study`}>
+<Layout title={`${title} - Case Study`} footerMargin={false}>
   <Container>
     <div class="mx-auto max-w-3xl text-center mt-14">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
@@ -31,9 +32,7 @@ const { Content } = await entry.render();
       </h1>
       <h2 class="text-lg text-gray-600">{snippet}</h2>
       <div class="flex flex-wrap gap-4 items-center justify-center mt-4">
-        {technologies.map((tech) => (
-          <Badge color="purple">{tech}</Badge>
-        ))}
+        {technologies.map((tech) => <Badge color="purple">{tech}</Badge>)}
       </div>
     </div>
 
@@ -54,4 +53,5 @@ const { Content } = await entry.render();
       <Content />
     </div>
   </Container>
+  <Cta />
 </Layout>
