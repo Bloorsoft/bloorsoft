@@ -5,15 +5,10 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Link from "@components/ui/link.astro";
-import EmployeeImg from "../assets/employee.jpg";
-import logoSmall from "@assets/logoSmall.png";
 import logo from "@assets/bloorsoft-logo.png";
 import Logos from "@components/logos.astro";
-import { Icon } from "astro-icon/components";
 import Cta from "@components/cta.astro";
 
-// Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
 });
@@ -37,11 +32,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         the job. This is what makes our team so special 💜
       </Fragment>
     </Sectionhead>
-    <!-- <div class="mt-6 text-center">
-      <Link style="outline" size="sm" href="#" target="_blank" rel="noopener">
-        Learn more →
-      </Link>
-    </div> -->
+
     <div class="mt-16 border-y py-6 border-slate-100">
       <Logos />
     </div>
@@ -91,7 +82,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto mt-12">
+    <div class="grid md:grid-cols-2 gap-10 mx-auto mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">

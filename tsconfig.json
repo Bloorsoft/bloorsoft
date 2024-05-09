@@ -24,7 +24,10 @@
       ],
       "@scripts/*": [
         "scripts/*"
-      ]
+      ],
+      "@draft_pages/*": [
+        "draft_pages/*"
+      ],
     },
   },
   "plugins": [
